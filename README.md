@@ -1,6 +1,6 @@
 # Exponentiation with AWS
 
-This is a simple web application that allows users to perform exponentiation - computing the power of a base number to an exponent. It's designed as a demonstration of integrating various AWS services to create a serverless application that's scalable and easy to deploy.
+This is a simple web application that allows users to perform exponentiation - computing the power of a base number to an exponent. It's designed as a demonstration of integrating various Amazon Web Services (AWS) services to create a serverless application that's scalable and easy to deploy.
 
 ## Features
 
@@ -61,7 +61,8 @@ The application uses the following AWS services:
 - Access the web application hosted by AWS Amplify via the URL provided after deployment.
 - Enter the base number and exponent in the provided fields and click "Calculate" to see the results.
 
-![Webpage](Images/result.jpg)
+<img src="Images/result.jpg" alt="Webpage" style="width: 75%;">
+
 
 ## Resources
 
