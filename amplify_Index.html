@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>To the Power of!</title>
+    <!-- Styling for the client UI -->
+    <style>
+        body {
+            font-family: system-ui;
+            background-color: #f5f5dc; 
+            color: #9dc183; 
+            text-align: center; 
+        }
+        h1 {
+            margin-top: 50px;
+        }
+        label, input, button {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #9dc183;
+            border: none;
+            color: #FFFFFF;
+            font-weight: bold;
+            width: 140px;
+            cursor: pointer;
+        }
+        input {
+            width: 100px;
+            border: 2px solid #9dc183;
+        }
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exponentiation!</h1>
+    <form>
+        <label>Base number:</label>
+        <input type="text" id="base">
+        <br>
+        <label>Exponent number:</label>
+        <input type="text" id="exponent">
+        <br>
+        <!-- Button to trigger the function, passing input values as parameters -->
+        <button type="button" onclick="callAPI(document.getElementById('base').value, document.getElementById('exponent').value)">Calculate</button>
+    </form>
+    <div id="result"></div> <!-- Display results here -->
+    <script>
+        // Function to call API and display results in the webpage
+        var callAPI = (base, exponent) => {
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+            var raw = JSON.stringify({"base":base, "exponent":exponent});
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+            fetch("YOUR_API_LINK_HERE", requestOptions)
+            .then(response => response.json()) // Changed to response.json() for parsing JSON response
+            .then(result => {
+                document.getElementById('result').innerText = `Result: ${result.body}`; // Display result in div
+            })
+            .catch(error => console.log('error', error));
+        }
+    </script>
+</body>
+</html>
