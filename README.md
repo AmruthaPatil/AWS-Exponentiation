@@ -17,7 +17,7 @@ The application uses the following AWS services:
 - **Amazon DynamoDB**: Stores and retrieves data required by the application.
 - **AWS IAM (Identity and Access Management)**: Manages access to AWS services and resources securely.
 
-![Flow Diagram](Images/AWSFlowDiagram.jpg)
+![Flow Diagram](Images/AWSFlowDiagram.png)
 
 ## Setup and Deployment
 
